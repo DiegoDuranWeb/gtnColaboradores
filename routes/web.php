@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/administrador', 'Adminitrador\HomeController@index')->name('administrador.index');
+Route::get('/colaborador', 'Colaborador\HomeController@index')->name('colaborador.index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
