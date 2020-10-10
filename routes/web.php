@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/administrador', 'Adminitrador\HomeController@index')->name('administrador.index');
+Route::get('/administrador/usuarios', 'Administrador\UserController@index')->name('administrador.usuarios.index');
+Route::get('/administrador/usuarios/create', 'Administrador\UserController@create')->name('nuevo.usuario');
+Route::post('/administrador/usuarios/store', 'Administrador\UserController@store')->name('registrar.usuario');
+
 Route::get('/colaborador', 'Colaborador\HomeController@index')->name('colaborador.index');
 Auth::routes();
 
