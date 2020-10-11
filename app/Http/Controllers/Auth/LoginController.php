@@ -30,7 +30,7 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         if($user->role_id==1){
-            return redirect()->route('ad.index');
+            return redirect()->route('administrador.index');
         }else if($user->role_id==2){
             return redirect()->route('colaborador.index');
         }

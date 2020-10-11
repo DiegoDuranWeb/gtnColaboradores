@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/administrador', 'Adminitrador\HomeController@index')->name('administrador.index');
+Route::get('/administrador', 'Administrador\HomeController@index')->name('administrador.index');
 //Rutas de administrador de usuarios
 Route::get('/administrador/usuarios', 'Administrador\UserController@index')->name('administrador.usuarios.index');
 Route::get('/administrador/usuarios/create', 'Administrador\UserController@create')->name('nuevo.usuario');
@@ -30,6 +30,8 @@ Route::get('/administrador/eventos/create', 'Administrador\EventoController@crea
 Route::get('/administrador/eventos/{evento}/edit', 'Administrador\EventoController@edit')->name('eventos.edit');
 Route::post('/administrador/eventos/store', 'Administrador\EventoController@store')->name('eventos.store');
 Route::put('/administrador/eventos/{evento}', 'Administrador\EventoController@update')->name('eventos.update');
+Route::get('/administrador/eventos/{evento}', 'Administrador\EventoController@show')->name('eventos.show');
+
 Route::delete('/administrador/eventos/{evento}', 'Administrador\EventoController@delete')->name('eventos.delete');
 
 

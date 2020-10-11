@@ -19,7 +19,9 @@
                 <td>{{$evento->cupos}}</td>
                 <td>{{$evento->existencia}}</td>
                 <td>{{$evento->estado}}</td>
-
+                <td>
+                    <a href="{{route('eventos.show', ['evento' => $evento->id])}}">Ver</a>
+                </td>
             </tr>
         @endforeach
     </tbody>
