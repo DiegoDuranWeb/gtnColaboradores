@@ -117,4 +117,8 @@ class EventoController extends Controller
     {
         $evento->delete();
     }
+    public function estado(Request $request, Evento $evento)
+    {
+       return response()->json($request);
+    }
 }

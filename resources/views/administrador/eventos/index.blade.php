@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <a href="{{route('eventos.create')}}">Nuevo evento</a>
 
 <table class="table-responsive">
@@ -21,8 +23,12 @@
                 <td>{{$evento->estado}}</td>
                 <td>
                     <a href="{{route('eventos.show', ['evento' => $evento->id])}}">Ver</a>
-                </td>
+                <estado-evento :estado="{{$evento->estado}}" :evento-id="{{$evento->id}}"></estado-evento>
+
+            </td>
             </tr>
         @endforeach
     </tbody>
 </table>
+
+@endsection

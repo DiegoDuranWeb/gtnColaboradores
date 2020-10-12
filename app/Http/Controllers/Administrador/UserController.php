@@ -14,7 +14,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+   public function index()
     {
         $usuarios= User::latest()->paginate(10);
         return view('administrador.usuarios.index', compact('usuarios'));
@@ -39,12 +39,13 @@ class UserController extends Controller
     protected function store(Request $request)
     {
         $data= $this->validar($request);
-        User::create([
+        $usuario = User::create([
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'role_id' => 2,
-
         ]);
+        return redirect()->route('colaborador.create.usuario',['usuario'=>$usuario]);
+
     }
 
     /**
