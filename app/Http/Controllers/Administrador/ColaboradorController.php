@@ -15,7 +15,8 @@ class ColaboradorController extends Controller
      */
     public function index()
     {
-        //
+        $colaboradores = Colaborador::get();
+        return view('colaborador.index',compact('colaboradores'));
     }
 
     /**
@@ -40,7 +41,21 @@ class ColaboradorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'nombre' => 'require',
+            'apellido' => 'require',
+            'documento' => 'require',
+            'sueldo' => 'require',
+            'usuario_id' => 'require',
+        ]);
+        $colaboradores = new Colaborador();
+        $colaboradores->nombre = $data['nombre'];
+        $colaboradores->appelido = $data['apellido'];
+        $colaboradores->documento = $data['documento'];
+        $colaboradores->sueldo = $data['sueldo'];
+        $colaboradores->user_id = $data['usuario_id'];
+        $colaboradores->save();
+        return redirect()->route('colaborador.index');
     }
 
     /**
