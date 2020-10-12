@@ -23,7 +23,6 @@ Route::get('/administrador/usuarios', 'Administrador\UserController@index')->nam
 Route::get('/administrador/usuarios/create', 'Administrador\UserController@create')->name('nuevo.usuario');
 Route::post('/administrador/usuarios/store', 'Administrador\UserController@store')->name('registrar.usuario');
 //rutas de administrador Colaborador
-
 Route::get('/administrador/colaborador/create/{usuario}','Administrador\ColaboradorController@crearColaborador')->name('colaborador.create.usuario');
 Route::get('/administrador/colaborador/create','Administrador\ColaboradorController@create')->name('colaborador.create');
 

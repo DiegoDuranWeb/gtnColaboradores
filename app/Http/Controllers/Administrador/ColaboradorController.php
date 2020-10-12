@@ -25,11 +25,11 @@ class ColaboradorController extends Controller
      */
     public function create()
     {
-        return view('administrador.colaborador.store');
+        //return view('administrador.colaborador.store');
     }
     public function crearColaborador(User $usuario)
     {
-        return view('administrador.colaborador.store',compact('usuario'));
+        return view('administrador.colaborador.create',compact('usuario'));
     }
 
     /**

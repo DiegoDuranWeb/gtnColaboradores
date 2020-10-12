@@ -13,6 +13,8 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('/css/estilospricipal.css')}}">
@@ -60,12 +62,13 @@
         </a>
     </div>
     <!-- Aca termina el menu lateral-->
-
     <!--Contenido de la siguiente parte-->
-    <div class="content">
-        <div class="fondocolor"></div>
-        <div class="comienzo-cont container">
-            <div class="titulo-cont">
+     <div class="contenido">
+        <div class="fondocolor">
+        </div>
+        <div class="comienzo-cont contenedor">
+                @yield('content')
+            {{-- <div class="titulo-cont">
                 <h3>Bienvenido Diego Duran</h3>
                 <h6>¿Que deseas hacer?</h6>
             </div>
@@ -78,9 +81,9 @@
                     <a href=""><img src="/img/2fdb40c3-7ad2-42fb-9b20-330339a70077.jpg" alt=""></a>
                     <h4 class="opc-titulo2">Nuevo evento</h4>
                 </div>
-            </div>
+            </div> --}}
         </div>
-        <div class="final-cont">
+        {{-- <div class="final-cont">
             <div class="box">
                 <div class="eventos">
                     <center>
@@ -93,7 +96,7 @@
                     <img src="/img/91612ff3-de2c-418e-a417-0e515517ab84.jpg" alt="" width="300px" height="300">
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 
 </body>
